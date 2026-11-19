@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-paper font-sans text-ink antialiased; }
+  h1, h2, h3, h4 { @apply font-display tracking-tight; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-teal; }
+}
+
+@layer components {
+  .card { @apply rounded-2xl border border-line bg-white p-6; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-60; }
+  .btn-primary { @apply btn bg-signal text-white hover:bg-signal-dark; }
+  .btn-dark { @apply btn bg-ink text-white hover:bg-ink-soft; }
+  .btn-ghost { @apply btn border border-line bg-white text-ink hover:border-ink; }
+  .field-label { @apply mb-1.5 block text-sm font-medium text-ink; }
+  .input { @apply w-full rounded-xl border border-line bg-white px-3.5 py-2.5 text-sm text-ink placeholder:text-steel/70 focus:border-teal focus:outline-none focus:ring-2 focus:ring-teal/25 disabled:bg-paper; }
+  .input-error { @apply border-signal focus:border-signal focus:ring-signal/20; }
+  .road { background-image: repeating-linear-gradient(90deg, #fff 0 48px, transparent 48px 96px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

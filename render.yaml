@@ -1,0 +1,21 @@
+# Render Blueprint: deploys the FastAPI backend. The frontend goes on Vercel (see README).
+services:
+  - type: web
+    name: carworth-api
+    runtime: python
+    rootDir: backend
+    plan: starter            # persistent disks require a paid plan
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.3
+      - key: DATABASE_URL
+        value: sqlite:////data/predictions.db   # lives on the persistent disk below
+      - key: CORS_ORIGINS
+        value: https://YOUR-FRONTEND.vercel.app   # set to your Vercel URL
+    disk:
+      name: carworth-data
+      mountPath: /data
+      sizeGB: 1

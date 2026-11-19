@@ -1,0 +1,19 @@
+# Runtime
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.4
+SQLAlchemy==2.0.36
+python-dotenv==1.0.1
+psycopg2-binary==2.9.10   # only used when DATABASE_URL points to PostgreSQL
+
+# Machine learning (versions used to train the bundled artifact must match at inference)
+numpy>=2.0,<3
+pandas>=2.2
+scikit-learn==1.9.1   # must match the version that trained artifacts/car_price_model.joblib
+joblib>=1.5
+matplotlib>=3.9
+seaborn>=0.13
+
+# Testing
+pytest==8.3.4
+httpx==0.28.1

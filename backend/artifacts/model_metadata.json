@@ -1,0 +1,3577 @@
+{
+  "trained_at": "2026-11-18T02:47:12.418820+00:00",
+  "sklearn_version": "1.9.1",
+  "best_model": "Extra Trees",
+  "selection_metric": "lowest 3-fold CV mean absolute error (INR), training split only",
+  "test_metrics": {
+    "r2": 0.9656612282302784,
+    "mae": 130301.37650790044,
+    "mse": 104646693761.62112,
+    "rmse": 323491.4121914539,
+    "mape_pct": 17.455157017324307,
+    "r2_log": 0.9344027036548461
+  },
+  "model_comparison": [
+    {
+      "model": "Linear Regression",
+      "best_params": null,
+      "cv_r2_log": 0.948271619922869,
+      "cv_r2": 0.8782558794120309,
+      "cv_mae": 209432.43405185975,
+      "cv_rmse": 696043.3549155546,
+      "test": {
+        "r2": 0.910316456429474,
+        "mae": 176709.25450013764,
+        "mse": 273308736329.2707,
+        "rmse": 522789.38046719227,
+        "mape_pct": 17.017181075972122,
+        "r2_log": 0.9391147527905863
+      },
+      "seconds": 0.3
+    },
+    {
+      "model": "Decision Tree",
+      "best_params": {
+        "min_samples_leaf": 2,
+        "max_depth": 16
+      },
+      "cv_r2_log": 0.8698285068934325,
+      "cv_r2": 0.8719074549742697,
+      "cv_mae": 277133.90390092996,
+      "cv_rmse": 702935.8275065188,
+      "test": {
+        "r2": 0.9152478758597181,
+        "mae": 231724.3841595562,
+        "mse": 258280338039.79242,
+        "rmse": 508212.8865345628,
+        "mape_pct": 27.66535051689103,
+        "r2_log": 0.8628770264078718
+      },
+      "seconds": 1.3
+    },
+    {
+      "model": "Random Forest",
+      "best_params": {
+        "n_estimators": 150,
+        "min_samples_leaf": 1,
+        "max_features": 1.0,
+        "max_depth": null
+      },
+      "cv_r2_log": 0.9267964803488568,
+      "cv_r2": 0.9068074173257569,
+      "cv_mae": 217618.74624906,
+      "cv_rmse": 610439.2788825986,
+      "test": {
+        "r2": 0.955315250866209,
+        "mae": 165004.2949145695,
+        "mse": 136175844895.59058,
+        "rmse": 369020.1144864472,
+        "mape_pct": 19.961633001819603,
+        "r2_log": 0.921387591805805
+      },
+      "seconds": 69.3
+    },
+    {
+      "model": "Extra Trees",
+      "best_params": {
+        "n_estimators": 150,
+        "min_samples_leaf": 1,
+        "max_features": 1.0,
+        "max_depth": 30
+      },
+      "cv_r2_log": 0.9416912250996113,
+      "cv_r2": 0.9551514655327056,
+      "cv_mae": 152359.95518824796,
+      "cv_rmse": 419998.25144989043,
+      "test": {
+        "r2": 0.9656612282302784,
+        "mae": 130301.37650790044,
+        "mse": 104646693761.62112,
+        "rmse": 323491.4121914539,
+        "mape_pct": 17.455157017324307,
+        "r2_log": 0.9344027036548461
+      },
+      "seconds": 71.7
+    },
+    {
+      "model": "Gradient Boosting",
+      "best_params": {
+        "subsample": 1.0,
+        "n_estimators": 300,
+        "min_samples_leaf": 1,
+        "max_depth": 4,
+        "learning_rate": 0.1
+      },
+      "cv_r2_log": 0.9356332537591684,
+      "cv_r2": 0.8969833812096409,
+      "cv_mae": 229248.99542436298,
+      "cv_rmse": 642155.990923788,
+      "test": {
+        "r2": 0.9028723673626096,
+        "mae": 205265.85176732173,
+        "mse": 295994443148.9094,
+        "rmse": 544053.7134777313,
+        "mape_pct": 20.512226862741382,
+        "r2_log": 0.9227500009998014
+      },
+      "seconds": 59.7
+    }
+  ],
+  "error_band_log": {
+    "low_q10": -0.268956554993737,
+    "high_q90": 0.2748953378469171
+  },
+  "split": {
+    "train_rows": 4339,
+    "test_rows": 1085,
+    "test_size": 0.2,
+    "random_state": 42
+  },
+  "cleaning": {
+    "raw_rows": 5512,
+    "raw_columns": [
+      "Unnamed: 0",
+      "car_name",
+      "car_prices_in_rupee",
+      "kms_driven",
+      "fuel_type",
+      "transmission",
+      "ownership",
+      "manufacture",
+      "engine",
+      "Seats"
+    ],
+    "missing_values_raw": {
+      "car_name": 0,
+      "car_prices_in_rupee": 0,
+      "kms_driven": 0,
+      "fuel_type": 0,
+      "transmission": 0,
+      "ownership": 0,
+      "manufacture": 0,
+      "engine": 0,
+      "Seats": 0
+    },
+    "duplicates_removed": 76,
+    "rows_dropped_invalid": 12,
+    "invalid_rows_reason": "engine recorded as '0 cc' (a missing value, not a real engine size)",
+    "iqr_outliers_kept": {
+      "price_inr": 659,
+      "kms_driven": 111,
+      "engine_cc": 54
+    },
+    "clean_rows": 5424
+  },
+  "eda": {
+    "price_summary_inr": {
+      "count": 5424.0,
+      "mean": 1151594.9741887907,
+      "std": 1954548.1854261057,
+      "min": 35000.0,
+      "25%": 313000.0,
+      "50%": 550000.0,
+      "75%": 1020000.0,
+      "max": 19200000.0
+    },
+    "correlation_with_price": {
+      "price_inr": 1.0,
+      "kms_driven": -0.241,
+      "engine_cc": 0.166,
+      "manufacture_year": 0.351,
+      "ownership": -0.16,
+      "seats": 0.009
+    },
+    "category_counts": {
+      "fuel_type": {
+        "Petrol": 2928,
+        "Diesel": 2376,
+        "Cng": 80,
+        "Lpg": 28,
+        "Electric": 12
+      },
+      "transmission": {
+        "Manual": 3913,
+        "Automatic": 1511
+      },
+      "ownership": {
+        "1.0": 3666,
+        "2.0": 1298,
+        "3.0": 358,
+        "4.0": 84,
+        "5.0": 12,
+        "0.0": 6
+      },
+      "seats": {
+        "5.0": 4592,
+        "7.0": 625,
+        "4.0": 88,
+        "6.0": 60,
+        "8.0": 54,
+        "2.0": 5
+      }
+    },
+    "brand_counts": {
+      "Maruti": 1368,
+      "Hyundai": 1008,
+      "Honda": 489,
+      "Mahindra": 308,
+      "Mercedes-Benz": 276,
+      "Tata": 266,
+      "Toyota": 263,
+      "Ford": 167,
+      "Renault": 166,
+      "BMW": 165,
+      "Audi": 162,
+      "Volkswagen": 159,
+      "Skoda": 113,
+      "Chevrolet": 82,
+      "Nissan": 63,
+      "MG": 61,
+      "Kia": 60,
+      "Jeep": 48,
+      "Land Rover": 47,
+      "Volvo": 30,
+      "Jaguar": 29,
+      "Datsun": 25,
+      "Fiat": 17,
+      "Mini": 13,
+      "Porsche": 10,
+      "Lexus": 10,
+      "Mitsubishi": 8,
+      "Maserati": 4,
+      "Isuzu": 4,
+      "Force": 1,
+      "Premier": 1,
+      "Bentley": 1
+    }
+  },
+  "catalog": {
+    "brands": {
+      "Audi": [
+        {
+          "name": "A6",
+          "count": 34,
+          "median_engine_cc": 1796,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "A4",
+          "count": 31,
+          "median_engine_cc": 1794,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "Q3",
+          "count": 31,
+          "median_engine_cc": 1498,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Q5",
+          "count": 23,
+          "median_engine_cc": 1797,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "Q7",
+          "count": 21,
+          "median_engine_cc": 1950,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "A3",
+          "count": 11,
+          "median_engine_cc": 1248,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "RS7",
+          "count": 4,
+          "median_engine_cc": 2081,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "A8",
+          "count": 3,
+          "median_engine_cc": 1968,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "S5",
+          "count": 2,
+          "median_engine_cc": 1347,
+          "typical_seats": 4,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "Q8",
+          "count": 1,
+          "median_engine_cc": 4134,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "RS5",
+          "count": 1,
+          "median_engine_cc": 2179,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        }
+      ],
+      "BMW": [
+        {
+          "name": "5 Series",
+          "count": 35,
+          "median_engine_cc": 1498,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "3 Series",
+          "count": 29,
+          "median_engine_cc": 1991,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "X1",
+          "count": 29,
+          "median_engine_cc": 1498,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "X5",
+          "count": 22,
+          "median_engine_cc": 1968,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "X3",
+          "count": 14,
+          "median_engine_cc": 1995,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "7 Series",
+          "count": 10,
+          "median_engine_cc": 1498,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "X4",
+          "count": 8,
+          "median_engine_cc": 1594,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "X7",
+          "count": 6,
+          "median_engine_cc": 1946,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "6 Series",
+          "count": 5,
+          "median_engine_cc": 1582,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "2 Series",
+          "count": 4,
+          "median_engine_cc": 1997,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "X6",
+          "count": 2,
+          "median_engine_cc": 1570,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "M",
+          "count": 1,
+          "median_engine_cc": 1968,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        }
+      ],
+      "Bentley": [
+        {
+          "name": "Flying",
+          "count": 1,
+          "median_engine_cc": 2967,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        }
+      ],
+      "Chevrolet": [
+        {
+          "name": "Beat",
+          "count": 30,
+          "median_engine_cc": 1347,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Spark",
+          "count": 19,
+          "median_engine_cc": 1390,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Lpg",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Cruze",
+          "count": 13,
+          "median_engine_cc": 1968,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Sail",
+          "count": 8,
+          "median_engine_cc": 1086,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Aveo",
+          "count": 4,
+          "median_engine_cc": 1142,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Enjoy",
+          "count": 3,
+          "median_engine_cc": 1461,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Tavera",
+          "count": 3,
+          "median_engine_cc": 1498,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Optra",
+          "count": 2,
+          "median_engine_cc": 1146,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        }
+      ],
+      "Datsun": [
+        {
+          "name": "RediGO",
+          "count": 13,
+          "median_engine_cc": 1248,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "GO",
+          "count": 12,
+          "median_engine_cc": 1197,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        }
+      ],
+      "Fiat": [
+        {
+          "name": "Linea",
+          "count": 7,
+          "median_engine_cc": 1198,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Punto",
+          "count": 4,
+          "median_engine_cc": 1322,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Avventura",
+          "count": 3,
+          "median_engine_cc": 1497,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Grande Punto",
+          "count": 2,
+          "median_engine_cc": 1247,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Palio",
+          "count": 1,
+          "median_engine_cc": 796,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        }
+      ],
+      "Force": [
+        {
+          "name": "Gurkha",
+          "count": 1,
+          "median_engine_cc": 1582,
+          "typical_seats": 7,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        }
+      ],
+      "Ford": [
+        {
+          "name": "Ecosport",
+          "count": 69,
+          "median_engine_cc": 1461,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Figo",
+          "count": 37,
+          "median_engine_cc": 1462,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Endeavour",
+          "count": 17,
+          "median_engine_cc": 1353,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Aspire",
+          "count": 14,
+          "median_engine_cc": 1248,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Fiesta",
+          "count": 11,
+          "median_engine_cc": 1493,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Ikon",
+          "count": 10,
+          "median_engine_cc": 1197,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Freestyle",
+          "count": 7,
+          "median_engine_cc": 1197,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Classic",
+          "count": 1,
+          "median_engine_cc": 3996,
+          "typical_seats": 4,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Fusion",
+          "count": 1,
+          "median_engine_cc": 1498,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        }
+      ],
+      "Honda": [
+        {
+          "name": "City",
+          "count": 217,
+          "median_engine_cc": 1461,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Amaze",
+          "count": 115,
+          "median_engine_cc": 1248,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Jazz",
+          "count": 49,
+          "median_engine_cc": 1248,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "WR-V",
+          "count": 26,
+          "median_engine_cc": 1223,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Brio",
+          "count": 22,
+          "median_engine_cc": 1273,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Civic",
+          "count": 19,
+          "median_engine_cc": 1396,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Mobilio",
+          "count": 13,
+          "median_engine_cc": 1498,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "CR-V",
+          "count": 11,
+          "median_engine_cc": 1956,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "BR-V",
+          "count": 10,
+          "median_engine_cc": 1324,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Accord",
+          "count": 7,
+          "median_engine_cc": 1497,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        }
+      ],
+      "Hyundai": [
+        {
+          "name": "i20",
+          "count": 233,
+          "median_engine_cc": 1299,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Grand i10",
+          "count": 151,
+          "median_engine_cc": 1198,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Cng",
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Verna",
+          "count": 124,
+          "median_engine_cc": 1248,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "i10",
+          "count": 118,
+          "median_engine_cc": 1248,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Lpg",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Creta",
+          "count": 114,
+          "median_engine_cc": 1396,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "EON",
+          "count": 62,
+          "median_engine_cc": 1248,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Lpg",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Santro Xing",
+          "count": 48,
+          "median_engine_cc": 1198,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Lpg",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Venue",
+          "count": 42,
+          "median_engine_cc": 1198,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Xcent",
+          "count": 42,
+          "median_engine_cc": 1223,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Cng",
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Santro",
+          "count": 18,
+          "median_engine_cc": 1322,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Accent",
+          "count": 15,
+          "median_engine_cc": 1248,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Cng",
+            "Diesel",
+            "Lpg",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Elantra",
+          "count": 12,
+          "median_engine_cc": 1397,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Aura",
+          "count": 8,
+          "median_engine_cc": 1222,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Cng",
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Santa",
+          "count": 6,
+          "median_engine_cc": 1472,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Alcazar",
+          "count": 4,
+          "median_engine_cc": 1495,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Tucson",
+          "count": 4,
+          "median_engine_cc": 1748,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "Elite",
+          "count": 3,
+          "median_engine_cc": 1405,
+          "typical_seats": 7,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Getz",
+          "count": 3,
+          "median_engine_cc": 1199,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Sonata",
+          "count": 1,
+          "median_engine_cc": 2987,
+          "typical_seats": 7,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        }
+      ],
+      "Isuzu": [
+        {
+          "name": "D-Max",
+          "count": 2,
+          "median_engine_cc": 1629,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "MU",
+          "count": 1,
+          "median_engine_cc": 1582,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "MU-X",
+          "count": 1,
+          "median_engine_cc": 998,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        }
+      ],
+      "Jaguar": [
+        {
+          "name": "XF",
+          "count": 17,
+          "median_engine_cc": 2143,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "F-Pace",
+          "count": 7,
+          "median_engine_cc": 1950,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "XJ",
+          "count": 4,
+          "median_engine_cc": 1970,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "XE",
+          "count": 1,
+          "median_engine_cc": 1396,
+          "typical_seats": 6,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        }
+      ],
+      "Jeep": [
+        {
+          "name": "Compass",
+          "count": 47,
+          "median_engine_cc": 1368,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Meridian",
+          "count": 1,
+          "median_engine_cc": 1956,
+          "typical_seats": 7,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        }
+      ],
+      "Kia": [
+        {
+          "name": "Seltos",
+          "count": 50,
+          "median_engine_cc": 1493,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Sonet",
+          "count": 8,
+          "median_engine_cc": 1148,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Carnival",
+          "count": 2,
+          "median_engine_cc": 1695,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        }
+      ],
+      "Land Rover": [
+        {
+          "name": "Range Rover",
+          "count": 15,
+          "median_engine_cc": 1498,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "Discovery",
+          "count": 12,
+          "median_engine_cc": 1898,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "Range Rover Evoque",
+          "count": 9,
+          "median_engine_cc": 1999,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "Range Rover Sport",
+          "count": 4,
+          "median_engine_cc": 1595,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "Range Rover Velar",
+          "count": 4,
+          "median_engine_cc": 1222,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "Freelander",
+          "count": 3,
+          "median_engine_cc": 1197,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        }
+      ],
+      "Lexus": [
+        {
+          "name": "NX",
+          "count": 8,
+          "median_engine_cc": 1223,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "ES",
+          "count": 2,
+          "median_engine_cc": 1730,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        }
+      ],
+      "MG": [
+        {
+          "name": "Hector",
+          "count": 48,
+          "median_engine_cc": 1451,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Astor",
+          "count": 6,
+          "median_engine_cc": 1644,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "ZS",
+          "count": 4,
+          "median_engine_cc": 1983,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Electric"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "Gloster",
+          "count": 3,
+          "median_engine_cc": 1197,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        }
+      ],
+      "Mahindra": [
+        {
+          "name": "XUV500",
+          "count": 101,
+          "median_engine_cc": 1497,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Scorpio",
+          "count": 50,
+          "median_engine_cc": 1461,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Bolero",
+          "count": 36,
+          "median_engine_cc": 1322,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "TUV300",
+          "count": 26,
+          "median_engine_cc": 1331,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Thar",
+          "count": 26,
+          "median_engine_cc": 1479,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "KUV100",
+          "count": 23,
+          "median_engine_cc": 1198,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "XUV300",
+          "count": 13,
+          "median_engine_cc": 1197,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Xylo",
+          "count": 8,
+          "median_engine_cc": 1142,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Marazzo",
+          "count": 7,
+          "median_engine_cc": 1493,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "XUV700",
+          "count": 5,
+          "median_engine_cc": 1999,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Verito",
+          "count": 4,
+          "median_engine_cc": 1222,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Ssangyong",
+          "count": 2,
+          "median_engine_cc": 2346,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "Alturas",
+          "count": 1,
+          "median_engine_cc": 1497,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "Jeep",
+          "count": 1,
+          "median_engine_cc": 1199,
+          "typical_seats": 6,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Logan",
+          "count": 1,
+          "median_engine_cc": 1248,
+          "typical_seats": 4,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Marshal",
+          "count": 1,
+          "median_engine_cc": 2179,
+          "typical_seats": 8,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Quanto",
+          "count": 1,
+          "median_engine_cc": 1998,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Renault",
+          "count": 1,
+          "median_engine_cc": 1582,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Supro",
+          "count": 1,
+          "median_engine_cc": 2143,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        }
+      ],
+      "Maruti": [
+        {
+          "name": "Swift Dzire",
+          "count": 204,
+          "median_engine_cc": 1248,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Cng",
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Wagon R",
+          "count": 204,
+          "median_engine_cc": 1223,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Cng",
+            "Lpg",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Swift",
+          "count": 179,
+          "median_engine_cc": 1248,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Baleno",
+          "count": 111,
+          "median_engine_cc": 1364,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Ertiga",
+          "count": 85,
+          "median_engine_cc": 1396,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Cng",
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Ciaz",
+          "count": 82,
+          "median_engine_cc": 1370,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Alto 800",
+          "count": 77,
+          "median_engine_cc": 1248,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Cng",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Alto",
+          "count": 58,
+          "median_engine_cc": 1354,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Cng",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Vitara Brezza",
+          "count": 55,
+          "median_engine_cc": 1248,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Alto K10",
+          "count": 54,
+          "median_engine_cc": 1222,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Cng",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Celerio",
+          "count": 40,
+          "median_engine_cc": 1198,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Cng",
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "SX4",
+          "count": 38,
+          "median_engine_cc": 1310,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Eeco",
+          "count": 32,
+          "median_engine_cc": 1198,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Cng",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Ignis",
+          "count": 25,
+          "median_engine_cc": 1248,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Zen Estilo",
+          "count": 23,
+          "median_engine_cc": 1248,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Ritz",
+          "count": 18,
+          "median_engine_cc": 1428,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Zen",
+          "count": 15,
+          "median_engine_cc": 1199,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "800",
+          "count": 13,
+          "median_engine_cc": 1497,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Lpg",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "S-Presso",
+          "count": 12,
+          "median_engine_cc": 1306,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "XL6",
+          "count": 12,
+          "median_engine_cc": 1598,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Omni",
+          "count": 10,
+          "median_engine_cc": 1297,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "A-Star",
+          "count": 9,
+          "median_engine_cc": 1199,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Esteem",
+          "count": 4,
+          "median_engine_cc": 1544,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Estilo",
+          "count": 3,
+          "median_engine_cc": 1591,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Brezza",
+          "count": 2,
+          "median_engine_cc": 1590,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Super",
+          "count": 2,
+          "median_engine_cc": 997,
+          "typical_seats": 4,
+          "fuel_types": [
+            "Cng",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Grand Vitara",
+          "count": 1,
+          "median_engine_cc": 998,
+          "typical_seats": 7,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        }
+      ],
+      "Maserati": [
+        {
+          "name": "Ghibli",
+          "count": 4,
+          "median_engine_cc": 1688,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        }
+      ],
+      "Mercedes-Benz": [
+        {
+          "name": "C-Class",
+          "count": 76,
+          "median_engine_cc": 1798,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "E-Class",
+          "count": 44,
+          "median_engine_cc": 1498,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "GLC",
+          "count": 41,
+          "median_engine_cc": 1968,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "GLE",
+          "count": 27,
+          "median_engine_cc": 1968,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "S-Class",
+          "count": 22,
+          "median_engine_cc": 1494,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "GLS",
+          "count": 16,
+          "median_engine_cc": 1980,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "CLA",
+          "count": 12,
+          "median_engine_cc": 1770,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "M-Class",
+          "count": 11,
+          "median_engine_cc": 1582,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "GLA Class",
+          "count": 7,
+          "median_engine_cc": 1248,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "B Class",
+          "count": 6,
+          "median_engine_cc": 1974,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "GL-Class",
+          "count": 6,
+          "median_engine_cc": 1983,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "G",
+          "count": 3,
+          "median_engine_cc": 1950,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "A Class",
+          "count": 2,
+          "median_engine_cc": 3062,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "V-Class",
+          "count": 2,
+          "median_engine_cc": 3329,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "A-Class",
+          "count": 1,
+          "median_engine_cc": 1999,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        }
+      ],
+      "Mini": [
+        {
+          "name": "3 DOOR",
+          "count": 8,
+          "median_engine_cc": 1748,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "Cooper",
+          "count": 5,
+          "median_engine_cc": 1198,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        }
+      ],
+      "Mitsubishi": [
+        {
+          "name": "Pajero Sport",
+          "count": 4,
+          "median_engine_cc": 1297,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Pajero",
+          "count": 2,
+          "median_engine_cc": 996,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Montero",
+          "count": 1,
+          "median_engine_cc": 998,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Outlander",
+          "count": 1,
+          "median_engine_cc": 2987,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        }
+      ],
+      "Nissan": [
+        {
+          "name": "Micra",
+          "count": 26,
+          "median_engine_cc": 1248,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Sunny",
+          "count": 17,
+          "median_engine_cc": 1199,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Terrano",
+          "count": 9,
+          "median_engine_cc": 1248,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Magnite",
+          "count": 8,
+          "median_engine_cc": 1223,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Kicks",
+          "count": 2,
+          "median_engine_cc": 1146,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "X-Trail",
+          "count": 1,
+          "median_engine_cc": 998,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        }
+      ],
+      "Porsche": [
+        {
+          "name": "Cayenne",
+          "count": 7,
+          "median_engine_cc": 1461,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "Panamera",
+          "count": 3,
+          "median_engine_cc": 1950,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        }
+      ],
+      "Premier": [
+        {
+          "name": "Rio",
+          "count": 1,
+          "median_engine_cc": 2523,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        }
+      ],
+      "Renault": [
+        {
+          "name": "Duster",
+          "count": 70,
+          "median_engine_cc": 1330,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "KWID",
+          "count": 54,
+          "median_engine_cc": 1220,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Triber",
+          "count": 17,
+          "median_engine_cc": 1497,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Kiger",
+          "count": 7,
+          "median_engine_cc": 1197,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Pulse",
+          "count": 6,
+          "median_engine_cc": 1197,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Lodgy",
+          "count": 4,
+          "median_engine_cc": 1871,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Scala",
+          "count": 4,
+          "median_engine_cc": 1198,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Koleos",
+          "count": 3,
+          "median_engine_cc": 1497,
+          "typical_seats": 7,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Fluence",
+          "count": 1,
+          "median_engine_cc": 2179,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        }
+      ],
+      "Skoda": [
+        {
+          "name": "Rapid",
+          "count": 41,
+          "median_engine_cc": 1248,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Superb",
+          "count": 22,
+          "median_engine_cc": 1690,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Octavia",
+          "count": 19,
+          "median_engine_cc": 1586,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Fabia",
+          "count": 9,
+          "median_engine_cc": 1198,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "New Laura",
+          "count": 9,
+          "median_engine_cc": 1462,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Kushaq",
+          "count": 6,
+          "median_engine_cc": 1547,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Slavia",
+          "count": 3,
+          "median_engine_cc": 1462,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Yeti",
+          "count": 3,
+          "median_engine_cc": 1199,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Kodiaq",
+          "count": 1,
+          "median_engine_cc": 1995,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        }
+      ],
+      "Tata": [
+        {
+          "name": "Tiago",
+          "count": 37,
+          "median_engine_cc": 1461,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Harrier",
+          "count": 35,
+          "median_engine_cc": 1598,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Nexon",
+          "count": 35,
+          "median_engine_cc": 1364,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Electric",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Indigo",
+          "count": 30,
+          "median_engine_cc": 1380,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Cng",
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Indica",
+          "count": 21,
+          "median_engine_cc": 1248,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Zest",
+          "count": 16,
+          "median_engine_cc": 1383,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Altroz",
+          "count": 14,
+          "median_engine_cc": 1248,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Hexa",
+          "count": 14,
+          "median_engine_cc": 1521,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Nano",
+          "count": 14,
+          "median_engine_cc": 1448,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Cng",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "New Safari",
+          "count": 12,
+          "median_engine_cc": 1526,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Tigor",
+          "count": 12,
+          "median_engine_cc": 1198,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Electric",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Safari Storme",
+          "count": 10,
+          "median_engine_cc": 1495,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Manza",
+          "count": 7,
+          "median_engine_cc": 1368,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Bolt",
+          "count": 4,
+          "median_engine_cc": 1273,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Punch",
+          "count": 2,
+          "median_engine_cc": 1986,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Sumo",
+          "count": 2,
+          "median_engine_cc": 1023,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Aria",
+          "count": 1,
+          "median_engine_cc": 1248,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        }
+      ],
+      "Toyota": [
+        {
+          "name": "Fortuner",
+          "count": 59,
+          "median_engine_cc": 1373,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Innova",
+          "count": 45,
+          "median_engine_cc": 1396,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Innova Crysta",
+          "count": 43,
+          "median_engine_cc": 1497,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Corolla Altis",
+          "count": 29,
+          "median_engine_cc": 1598,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Etios",
+          "count": 18,
+          "median_engine_cc": 1494,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Camry",
+          "count": 14,
+          "median_engine_cc": 1997,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Electric",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "Etios Liva",
+          "count": 13,
+          "median_engine_cc": 1199,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Land Cruiser",
+          "count": 13,
+          "median_engine_cc": 1364,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "Etios Cross",
+          "count": 6,
+          "median_engine_cc": 1222,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Glanza",
+          "count": 6,
+          "median_engine_cc": 1789,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Urban cruiser",
+          "count": 6,
+          "median_engine_cc": 1248,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Corolla",
+          "count": 4,
+          "median_engine_cc": 1273,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Platinum",
+          "count": 2,
+          "median_engine_cc": 1715,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Qualis",
+          "count": 2,
+          "median_engine_cc": 1245,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Yaris",
+          "count": 2,
+          "median_engine_cc": 1688,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "prado",
+          "count": 1,
+          "median_engine_cc": 1061,
+          "typical_seats": 8,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        }
+      ],
+      "Volkswagen": [
+        {
+          "name": "Polo",
+          "count": 73,
+          "median_engine_cc": 1248,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Vento",
+          "count": 57,
+          "median_engine_cc": 1461,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Ameo",
+          "count": 8,
+          "median_engine_cc": 1480,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Jetta",
+          "count": 6,
+          "median_engine_cc": 1197,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Virtus",
+          "count": 4,
+          "median_engine_cc": 1347,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Beetle",
+          "count": 2,
+          "median_engine_cc": 1623,
+          "typical_seats": 4,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "CrossPolo",
+          "count": 2,
+          "median_engine_cc": 2014,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Manual"
+          ]
+        },
+        {
+          "name": "Passat",
+          "count": 2,
+          "median_engine_cc": 1526,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "Taigun",
+          "count": 2,
+          "median_engine_cc": 1296,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic",
+            "Manual"
+          ]
+        },
+        {
+          "name": "Tiguan",
+          "count": 2,
+          "median_engine_cc": 1298,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "Touareg",
+          "count": 1,
+          "median_engine_cc": 998,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        }
+      ],
+      "Volvo": [
+        {
+          "name": "XC60",
+          "count": 17,
+          "median_engine_cc": 1598,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel",
+            "Petrol"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "XC90",
+          "count": 4,
+          "median_engine_cc": 1248,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "S60",
+          "count": 3,
+          "median_engine_cc": 1497,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "S90",
+          "count": 3,
+          "median_engine_cc": 1950,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "S80",
+          "count": 2,
+          "median_engine_cc": 2198,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        },
+        {
+          "name": "V40",
+          "count": 1,
+          "median_engine_cc": 1997,
+          "typical_seats": 5,
+          "fuel_types": [
+            "Diesel"
+          ],
+          "transmissions": [
+            "Automatic"
+          ]
+        }
+      ]
+    },
+    "fuel_types": [
+      "Cng",
+      "Diesel",
+      "Electric",
+      "Lpg",
+      "Petrol"
+    ],
+    "transmissions": [
+      "Automatic",
+      "Manual"
+    ],
+    "ownership": [
+      {
+        "value": 0,
+        "label": "Unregistered / 0th owner"
+      },
+      {
+        "value": 1,
+        "label": "1st owner"
+      },
+      {
+        "value": 2,
+        "label": "2nd owner"
+      },
+      {
+        "value": 3,
+        "label": "3rd owner"
+      },
+      {
+        "value": 4,
+        "label": "4th owner"
+      },
+      {
+        "value": 5,
+        "label": "5th owner"
+      }
+    ],
+    "seats": [
+      2,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "year_range": [
+      1995,
+      2022
+    ],
+    "kms_range": [
+      0,
+      560000
+    ],
+    "engine_range": [
+      624,
+      5950
+    ]
+  },
+  "features": {
+    "raw": [
+      "brand",
+      "model",
+      "manufacture_year",
+      "kms_driven",
+      "fuel_type",
+      "transmission",
+      "ownership",
+      "engine_cc",
+      "seats"
+    ],
+    "numeric": [
+      "age",
+      "log_kms",
+      "kms_per_year",
+      "ownership",
+      "engine_cc",
+      "seats"
+    ],
+    "categorical": [
+      "brand",
+      "model",
+      "fuel_type",
+      "transmission"
+    ]
+  },
+  "notes": [
+    "XGBoost was not used (not installed in the training environment).",
+    "Deployed model is refit on all cleaned rows; reported test metrics come from the 80/20 split before that refit."
+  ]
+}
